@@ -51,7 +51,7 @@ class CSP
 			$params[] = $directive . ' ' . \implode(' ', \array_unique($sources));
 		}
 		if (empty($this->directives['frame-ancestors'])) {
-			$params[] = "frame-ancestors 'sizaf.com';";
+			$params[] = "frame-ancestors 'self' sizaf.com dev-ubt-app01.dev.orientdots.net;";
 		}
 		return \implode('; ', $params);
 	}
