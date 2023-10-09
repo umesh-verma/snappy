@@ -28,6 +28,10 @@
 #	Header set X-Content-Type-Options "nosniff"
 #	Header set X-XSS-Protection "1; mode=block"
 	Header set Service-Worker-Allowed "/"
+	Header always set X-Frame-Options "ALLOW-FROM test.com"
+	Header always edit Set-Cookie (.*) "$1; HTTPOnly"
+	Header always edit Set-Cookie (.*) "$1; Secure"
+	Header always edit Set-Cookie (.*) "$1; SameSite=None"
 
 	# Google FLoC
 #	Header set Permissions-Policy "interest-cohort=()"
