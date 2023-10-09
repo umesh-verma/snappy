@@ -79,7 +79,7 @@ class CSP
 			\header('Content-Security-Policy: ' . $this);
 		}
 		if (empty($this->directives['frame-ancestors'])) {
-			\header('X-Frame-Options: DENY');
+			// \header('X-Frame-Options: ALL');
 		} else {
 //			\header('X-Frame-Options: SAMEORIGIN');
 		}
